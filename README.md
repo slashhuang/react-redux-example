@@ -12,11 +12,11 @@
 ### 项目学习内容介绍
 * react-hot-loader配置的三种方法
 
-    * 先说明一点 ： **``` javasscript "webpack/hot/dev-server",'你的入口文件']```配合react必须要加的**
+    * 先说明一点 ： **``` ["webpack/hot/dev-server",'你的入口文件']```配合react必须要加的**
     * inline 模式，定义scrip.src= **webpack.config.entry.publicPath** bundle.js 即可
-    * iframe 模式，打开页面 ``` javascript url=“http://localhost:" +"端口号"+"/webpack-dev-server/index.html” ```
+    * iframe 模式，打开页面 ``` url=“http://localhost:" +"端口号"+"/webpack-dev-server/index.html” ```
     * 直接模式，在webpack.config里面的entry入口定义
-         ``` javascript  ["webpack-dev-server/client?http://localhost:3000","webpack/hot/dev-server",'你的入口文件']```
+         ```  ["webpack-dev-server/client?http://localhost:3000","webpack/hot/dev-server",'你的入口文件']```
          
 * webpack&&webpack-dev-server参数配置：进我的个人主页，搜索webpack即可
 
