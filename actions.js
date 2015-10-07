@@ -1,6 +1,9 @@
 /**
  * Created by slashhuang on 15/10/5.
  */
+
+//It is a new API for making network requests that
+// replaces XMLHttpRequest for most common needs
 import fetch from 'isomorphic-fetch';
 
 export const REQUEST_POSTS = 'REQUEST_POSTS';

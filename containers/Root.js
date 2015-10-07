@@ -11,10 +11,12 @@ const store = configureStore();
 
 export default class Root extends Component {
     render() {
+        //创建provider实例,并设定attribute将store状态树注入app
         return (
+
             <Provider store={store}>
             {() => <AsyncApp />}
-</Provider>
+            </Provider>
 );
 }
 }

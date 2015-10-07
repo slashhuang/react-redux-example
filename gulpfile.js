@@ -6,7 +6,7 @@ var gulp=require('gulp');
 var open=require('gulp-open');
 var server=require('./server')
 
-gulp.task('dev',function(){
+gulp.task('default',function(){
     /**
      *dev环境下调试使用
      *有多重模式：
@@ -20,17 +20,8 @@ gulp.task('dev',function(){
      *
      */
     server();//加载dev-server
+    //本质上automatic refresh应该都是从dev-server(会监听所有bundle文件)走的，publicPath只是提供了个路径连接到dev-server
     gulp.src(__dirname).pipe(
         open({
-            'uri':"http://localhost:3000/webpack-dev-server/index.html"
-        })
-    )
-});
-gulp.task('default',function(){
-    server();//加载dev-server
-    gulp.src(__dirname).pipe(
-        open({
-            'uri':"http://localhost:3000/index.html"
-        })
-    )
-});
+            'uri': "http://localhost:3000/index.html"
+        }))});

@@ -9,6 +9,13 @@ import rootReducer from './reducers';
 
 const loggerMiddleware = createLogger();
 
+function callTraceMiddleware ({dispatch,getState}){
+    return next=> action =>{
+        console.trace();
+        return next(action);
+    }
+}
+
 const createStoreWithMiddleware = applyMiddleware(
     thunkMiddleware,
     loggerMiddleware

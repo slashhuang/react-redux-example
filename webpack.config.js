@@ -13,13 +13,13 @@ var webpack = require('webpack');
 module.exports = {
     devtool: 'eval',
     entry: {
-        app:["webpack/hot/dev-server",'./index.js']
+        app:["webpack-dev-server/client?http://localhost:3000","webpack/hot/dev-server",'./index.js']
     },
 
     output: {
         path: path.join(__dirname, 'dist'),//必须是绝对路径
         filename: 'bundle.js',
-        publicPath: "/static/",//调试地址为相对路径
+        publicPath: "/static/",//调试地址为相对路径,它会观察所有bundle的文件，从此publicPath更新内存中的js文件获取
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()//添加此插件以增加hotmodulereplace功能
